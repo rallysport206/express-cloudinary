@@ -1,1 +1,10 @@
 <h1>File Upload</h1>
+<form enctype="multipart/form-data" action="/" method="post">
+  <input type="file" name="myFile" value="">
+  <input type="submit" class=" btn btn-primary">
+</form>
+<h2>Images</h2>
+<% images.forEach(function(item){ %>
+  <% var imgUrl = cloudinary.url(item, {width: 350}); %>
+  <img src="<%= imgUrl%>">
+<% }); %>
